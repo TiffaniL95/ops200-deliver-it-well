@@ -39,12 +39,12 @@ describe('server/app.js', function() {
   });
 
 
-it('page says how are you today?', (done) => {
+it('page says it\s a beautiful day', (done) => {
   chai.request(server)
     .get('/')
     .end((err, res) => {
       expect(err).not.exist;
-      expect(JSON.stringify(res.text)).to.contain('How are you today?');
+      expect(JSON.stringify(res.text)).to.contain('It\'s a beautiful day');
       done();
     });
   });
