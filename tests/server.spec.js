@@ -37,4 +37,15 @@ describe('server/app.js', function() {
       done();
     });
   });
+
+
+it('page says how are you today?', (done) => {
+  chai.request(server)
+    .get('/')
+    .end((err, res) => {
+      expect(err).not.exist;
+      expect(JSON.stringify(res.text)).to.contain('How are you today?');
+      done();
+    });
+  });
 })
